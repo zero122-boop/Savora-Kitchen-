@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Order Now - Savora Kitchen</title>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Savora Kitchen Logo"></a>
+   <span class="logo-text">Savora <span>Kitchen</span></span>
+    </div>
+        
+    <div class="nav-links">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact & Reservations</a></li>
+            <li><a href="order.html" class="active" aria-current="page">Order Now</a></li>
+        </ul>
+    </div>
+            <div class="nav-actions">
+                <a href="login.html" class="nav-login-btn">Login / Sign Up</a>
+                <a href="contact.html" class="reserve-btn">Reserve Now!</a>
+    </div>
+    </nav>
+<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+</button>
+</header>
+
+<!--Background Video Overlay-->
+<div class="video-background-wrapper">
+    <video autoplay muted loop playsinline class="video-background">
+        <source src="Savora Kitchen.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+</div>
+
+<!--Main Order Cardd Section-->
+<section class="order-modal-section">
+    <div class="order-card-container">
+
+        <!--Left Side: Interactive Form-->
+        <div class="order-form-side">
+            <span class="brand-tag">Savora Direct</span>
+            <h2>Order Your Experience</h2>
+
+        <form class="order-form" method="post">
+            <!-- Delivery / Pick-up Toggle -->
+            <div class="order-type-toggle">
+                <input type="radio" id="delivery" name="order-type" value="delivery" checked>
+                <label for="delivery">Delivery</label>
+
+                <input type="radio" id="pickup" name="order-type" value="pickup">
+                <label for="pickup">Pickup</label>
+            </div>
+            <!-- Customer Info -->
+            <div class="form-group">
+                <label for="order-name">Full Name</label>
+            <input type="text" id="order-name" name="name" placeholder="Enter your full name" maxlength="200" required>
+            </div>
+
+        <div class="form-group">
+            <label for="order-email">Email Address</label>
+            <input type="email" id="order-email" name="email" placeholder="name@example.com" autocomplete="email" maxlength="254" required>
+        </div>
+        <!-- Food Selection -->
+        <div class="form-row">
+            <div class="form-group flex-grow">
+                <label for="food-selection">Select Signature Dish</label>
+                <select id="food-selection" name="dish" required>
+                    <option value="" disabled selected>Choose a delicacy...</option>
+                    <option value="Ramen">Ramen</option>
+                    <option value="Sushi Deluxe">Sushi Deluxe</option>
+                    <option value="Thai Green Curry">Thai Green Curry</option>
+                    <option value="Korean Bibimbap">Korean Bibimbap</option>
+                    <option value="Truffle Fettuccine Alfredo">Truffle Fettuccine Alfredo</option>
+                    <option value="Margherita Pizza">Margherita Pizza</option>
+                    <option value="Lasagna">Lasagna</option>
+                </select>
+            </div>
+        </div>
+    <div class="form-group qty-group">
+        <label for="order-qty">Qty</label>
+        <input type="number" id="order-qty" name="quantity" min="1" max="10" step="1" value="1" required>
+    </div>
+
+    <div class="order-price-preview" id="order-price-preview" aria-live="polite" hidden>
+        <p class="order-price-line"></p>
+        <p class="order-price-total"></p>
+    </div>
+
+    <!-- Delivery Address -->
+    <div class="form-group" id="address-group">
+        <label for="delivery-address">Delivery Address</label>
+        <input type="text" id="delivery-address" name="address" placeholder="Street address, apartment, city" maxlength="500" required>
+    </div>
+<div class="form-group" id="pickup-time-group">
+    <label for="pickup-time">Pickup Time</label>
+    <input type="time" id="pickup-time" name="pickup_time">
+</div>
+
+    <button type="submit" class="submit-btn">Place Order</button>
+    <p class="login-status order-status" role="status" aria-live="polite"></p>
+    </form>
+        </div>
+    <!-- Right Side: Culinary Showcase Image -->
+        <div class="order-image-side">
+            <img src="Sushi Deluxe.png" alt="Savora Signature Dish" class="showcase-img">
+            <div class="image-overlay-content">
+                <p class="image-caption">Crafted Fresh By Our Executive Chefs</p>
+            </div>
+        </div>
+        </div>
+</section>
+
+<footer>
+    <section class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <p>Follow Us:</p>
+                <ul>
+                   <li><a href="#" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.67.33-1 1-1Z" fill="currentColor"/></svg></a></li>
+                   <li><a href="#" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></li>
+                    <li><a href="#" aria-label="Twitter"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6.2c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.7.4-1.5.7-2.4.9A3.7 3.7 0 0 0 11.7 8c0 .3 0 .6.1.9a10.5 10.5 0 0 1-7.6-3.8 3.7 3.7 0 0 0 1.1 4.9c-.6 0-1.2-.2-1.7-.5 0 1.8 1.3 3.3 3 3.7-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.5 1.9 2.6 3.6 2.6A7.5 7.5 0 0 1 3.8 17c-.3 0-.7 0-1-.1a10.5 10.5 0 0 0 5.7 1.7c6.8 0 10.5-5.6 10.5-10.5v-.5c.7-.5 1.4-1.1 2-1.8Z" fill="currentColor"/></svg></a></li>
+                </ul>
+            </div>
+            <p>
+                &copy; 2026 Savora Kitchen. All rights reserved.
+            </p>
+        </div>
+    </section>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

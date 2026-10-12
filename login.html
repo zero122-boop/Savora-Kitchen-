@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <title>Savora Kitchen | Login & Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-container">
+        
+        <!-- Left Side: Visual Experience Showcase -->
+        <div class="auth-visual-side">
+            <div class="brand-logo">
+              <a href="index.html">
+        <img src="logo.png" alt="Savora Logo" class="brand-logo-img">
+    </a>
+</div>
+            <div class="visual-content">
+                <img src="Truffle Fettuccine Alfredo.png" alt="Truffle fettuccine Alfredo" class="auth-meal-image">
+                <h3>Taste the Exceptional</h3>
+                <p>Sign in to unlock exclusive dining privileges, personalized menu curation, and seamless reservation access.</p>
+            </div>
+            <div class="visual-footer">
+                <p>&copy; 2026 Savora Kitchen. All rights reserved.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Login & Registration Form Container -->
+        <div class="auth-form-side">
+            
+            <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p class="auth-subtitle">Please enter your credentials to access your account.</p>
+            </div>
+
+            <form method="post" class="login-form">
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-actions">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="Password-reset.html" class="forgot-pass">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn">Sign In</button>
+                <p class="login-status" role="status" aria-live="polite"></p>
+
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn google-btn">Google</button>
+                    <button type="button" class="social-btn apple-btn">Apple</button>
+                </div>
+
+                <p class="signup-link">Don't have an account? <a href="signup.html">Register for free</a></p>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="login.js"></script>
+</body>
+</html>

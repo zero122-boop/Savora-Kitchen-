@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Savora Kitchen | Sign Up</title>
+</head>
+<body class="auth-body">
+
+    <div class="auth-container">
+
+        <!-- Left Side: Visual Experience Showcase -->
+        <div class="auth-visual-side">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Savora Logo" class="brand-logo-img">
+                </a>
+            </div>
+            <div class="visual-content">
+                <img src="Truffle Fettuccine Alfredo.png" alt="Truffle fettuccine Alfredo" class="auth-meal-image">
+                <h3>Join the Table</h3>
+                <p>Create your account to unlock exclusive dining privileges, personalized menu curation, and priority reservation access.</p>
+            </div>
+            <div class="visual-footer">
+                <p>&copy; 2026 Savora Kitchen. All rights reserved.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Sign Up Form -->
+        <div class="auth-form-side">
+
+            <div class="form-header">
+                <span class="brand-tag">Savora Membership</span>
+                <h2>Create Your Account</h2>
+                <p class="auth-subtitle">Join Savora Kitchen and start your culinary journey with us.</p>
+            </div>
+
+            <form method="post" class="signup-form">
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+44 20 xxxx xxxx">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" minlength="6" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" placeholder="••••••••" minlength="6" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <div class="remember-me">
+                        <input type="checkbox" id="newsletter" checked>
+                        <label for="newsletter">Send me exclusive tasting menu invitations and priority booking updates.</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-btn" disabled>Create Account</button>
+                <p class="signup-status" role="status" aria-live="polite">Secure signup is unavailable until Firebase loads. If this message remains, reload the page.</p>
+
+                <div class="divider">
+                    <span>or sign up with</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn google-btn">Google</button>
+                    <button type="button" class="social-btn apple-btn">Apple</button>
+                </div>
+
+                <p class="signup-link">Already have an account? <a href="login.html">Log in here</a></p>
+            </form>
+
+            <div class="signup-success" role="status" aria-live="polite" tabindex="-1" hidden>
+                <span class="signup-success-icon" aria-hidden="true">✓</span>
+                <p>Your Savora account has been created and is ready to use.</p>
+                <a href="login.html" class="auth-btn signup-success-link">Continue to Login</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="signup.js"></script>
+</body>
+</html>

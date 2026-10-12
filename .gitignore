@@ -1,0 +1,14 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*serviceAccount*.json
+*credentials*.json
+*.pem
+*.key
+
+# Local development
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/

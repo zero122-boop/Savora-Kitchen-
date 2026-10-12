@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <title>Guest Portal | Savora Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-shell">
+        <aside class="dash-sidebar" aria-label="Customer dashboard">
+            <a href="index.html" class="dash-brand" aria-label="Savora Kitchen home">
+                <img src="logo.png" alt="">
+                <span>Savora <em>Kitchen</em></span>
+            </a>
+
+            <div class="mobile-dashboard-identity">
+                <h1>Good evening<span data-auth-greeting-name></span></h1>
+                <div class="mobile-profile">
+                    <div class="user-avatar"><img src="CEO Savora.png" alt=""></div>
+                    <div class="mobile-profile-copy">
+                        <span class="user-name" data-auth-display-name></span>
+                        <span class="membership-tier">Gold Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="dashboard-menu-toggle" type="button" aria-expanded="false" aria-controls="dashboard-navigation" aria-label="Open dashboard menu">
+                <span></span><span></span><span></span>
+                <span class="dashboard-menu-toggle-label">Menu</span>
+            </button>
+
+            <div class="mobile-nav-panel" id="dashboard-navigation">
+            <p class="sidebar-label">YOUR ACCOUNT</p>
+            <nav class="sidebar-nav" aria-label="Dashboard navigation">
+                <a href="#overview" class="nav-item active" aria-current="page">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+                    <span>Overview</span>
+                </a>
+                <a href="#reservations" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M7.5 3.5v3M16.5 3.5v3M3.5 9.5h17M8 13h3M8 16.5h6"/></svg>
+                    <span>Reservations</span>
+                </a>
+                <a href="#orders" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h14v16H5zM8 8h8M8 12h8M8 16h5"/><path d="M8 2.5v4M16 2.5v4"/></svg>
+                    <span>Order History</span>
+                </a>
+                <a href="#rewards" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>
+                    <span>Savora Club</span>
+                </a>
+                <a href="#preferences" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.5 2.6-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.9h-3l-.3-1.9a8 8 0 0 1-1.7-1l-1.7.7-1.5-2.6L7 15a8 8 0 0 1 0-2l-1.5-1.1L7 9.3l1.7.7a8 8 0 0 1 1.7-1l.3-1.9h3l.3 1.9a8 8 0 0 1 1.7 1l1.7-.7 1.5 2.6L19.4 13a8 8 0 0 1 0 2Z"/></svg>
+                    <span>Preferences</span>
+                </a>
+            </nav>
+
+            <p class="dashboard-logout-status" role="status" aria-live="polite"></p>
+            <a href="login.html" class="nav-item sidebar-logout">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20H10M14 16l4-4-4-4M18 12H9"/></svg>
+                <span>Logout</span>
+            </a>
+            </div>
+        </aside>
+
+        <main class="dash-main-content" id="overview">
+            <header class="dashboard-topbar" id="preferences">
+                <div class="topbar-copy">
+                    <span class="dashboard-eyebrow">YOUR SAVORA EXPERIENCE</span>
+                    <h1>Good evening<span data-auth-greeting-name></span></h1>
+                </div>
+                <div class="user-profile-menu">
+                    <div class="user-info">
+                        <span class="user-name" data-auth-display-name></span>
+                        <span class="membership-tier">Gold Member</span>
+                    </div>
+                    <div class="user-avatar"><img src="CEO Savora.png" alt="Profile avatar"></div>
+                    <a href="login.html" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <section class="welcome-banner">
+                    <div class="banner-text">
+                        <span class="welcome-kicker">A TABLE, A TASTE, A MOMENT</span>
+                        <h2>Welcome back<span data-auth-greeting-name></span></h2>
+                        <p>Your private table experience awaits. You have 1 upcoming reservation this evening.</p>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="order.html" class="dash-btn primary-btn">Order Food <span aria-hidden="true">↗</span></a>
+                        <a href="contact.html" class="dash-btn outline-btn">Book Table</a>
+                    </div>
+                </section>
+
+                <section class="metrics-grid" aria-label="Account overview">
+                    <article class="metric-card" id="reservations">
+                        <div class="metric-topline"><span class="metric-mark">01</span><span class="card-title">Upcoming Table</span></div>
+                        <div class="card-value">Tonight, 8:00 PM</div>
+                        <div class="card-subtext">Table 12 <span aria-hidden="true">·</span> Main Dining Room</div>
+                    </article>
+                    <article class="metric-card" id="rewards">
+                        <div class="metric-topline"><span class="metric-mark">02</span><span class="card-title">Savora Club Points</span></div>
+                        <div class="card-value">2,450 <small>pts</small></div>
+                        <div class="card-subtext">Gold Tier Status <span aria-hidden="true">·</span> 500 pts to Platinum</div>
+                    </article>
+                    <article class="metric-card">
+                        <div class="metric-topline"><span class="metric-mark">03</span><span class="card-title">Total Visits</span></div>
+                        <div class="card-value">18 <small>Times</small></div>
+                        <div class="card-subtext">Favorite Dish: Wagyu Ribeye</div>
+                    </article>
+                </section>
+
+                <section class="dash-section" id="orders">
+                    <div class="section-header">
+                        <div><span class="dashboard-eyebrow">YOUR RECENT ACTIVITY</span><h2>Recent Orders &amp; Reservations</h2></div>
+                        <a href="#orders" class="view-all">View All <span aria-hidden="true">→</span></a>
+                    </div>
+                    <p id="dashboard-history-status" class="card-subtext" role="status" aria-live="polite">Loading your recent orders and reservations...</p>
+                    <div class="activity-table-wrapper">
+                        <table class="dash-table">
+                            <thead><tr><th>Type</th><th>Date &amp; Time</th><th>Details</th><th>Total</th><th>Record</th></tr></thead>
+                            <tbody id="customer-history-body"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="dash-menu-section" aria-labelledby="dash-menu-title">
+                    <div class="section-header">
+                        <div><span class="dashboard-eyebrow">MADE FOR YOUR NEXT CRAVING</span><h2 id="dash-menu-title">Explore Our Menu</h2></div>
+                        <a href="menu.html" class="view-all">Explore Menu <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="dash-menu-grid">
+                        <article class="dash-menu-card"><img src="Wagyu Cheeseburger.png" alt="Wagyu Cheeseburger"><div class="dash-menu-card-info"><span>BEST SELLER</span><h3>Wagyu Cheeseburger</h3><div class="dash-menu-price">$16.99</div></div></article>
+                        <article class="dash-menu-card"><img src="Ramen.png" alt="Ramen"><div class="dash-menu-card-info"><span>CHEF'S SPECIAL</span><h3>Ramen</h3><div class="dash-menu-price">$12.99</div></div></article>
+                        <article class="dash-menu-card"><img src="Truffle Fettuccine Alfredo.png" alt="Truffle Fettuccine Alfredo"><div class="dash-menu-card-info"><span>CLASSIC FAVORITE</span><h3>Truffle Fettuccine Alfredo</h3><div class="dash-menu-price">$11.99</div></div></article>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script>
+        const dashboardMenuToggle = document.querySelector('.dashboard-menu-toggle');
+        const dashboardNavigation = document.querySelector('.mobile-nav-panel');
+
+        dashboardMenuToggle.addEventListener('click', () => {
+            const isOpen = dashboardMenuToggle.getAttribute('aria-expanded') !== 'true';
+            dashboardMenuToggle.setAttribute('aria-expanded', String(isOpen));
+            dashboardMenuToggle.setAttribute('aria-label', isOpen ? 'Close dashboard menu' : 'Open dashboard menu');
+            dashboardNavigation.classList.toggle('is-open', isOpen);
+        });
+
+        dashboardNavigation.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                if (link.classList.contains('sidebar-logout')) {
+                    return;
+                }
+
+                dashboardMenuToggle.setAttribute('aria-expanded', 'false');
+                dashboardMenuToggle.setAttribute('aria-label', 'Open dashboard menu');
+                dashboardNavigation.classList.remove('is-open');
+            });
+        });
+    </script>
+    <script type="module" src="dashboard-logout.js"></script>
+</body>
+</html>

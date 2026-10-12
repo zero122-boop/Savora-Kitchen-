@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact & Reservations - Savora Kitchen</title> 
+</head>
+<body>
+<header>
+    <nav class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Savora Kitchen Logo"></a>
+    <span class="logo-text">Savora <span>Kitchen</span></span>
+    </div>
+        
+    <div class="nav-links">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html" class="active" aria-current="page">Contact & Reservations</a></li>
+            <li><a href="order.html">Order Now</a></li>
+        </ul>
+    </div>
+            <div class="nav-actions">
+                <a href="login.html" class="nav-login-btn">Login / Sign Up</a>
+                <a href="contact.html" class="reserve-btn">Reserve Now!</a>
+    </div>
+    </nav>
+<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+</button>
+</header>
+
+<section class="contact-hero">
+    <div class ="contact-hero-content">
+        <span class="section-tag">
+            Contact & Reservations
+        </span>
+
+        <h1>
+            Reserve Your Table
+            And Let's Create
+            Memorable Moments.
+        </h1>
+
+        <p>
+            Whether you're celebrating a special occasion
+            or simply craving an unforgettable dining experience,
+            our team is ready to welcome you.
+        </p>
+    </div>
+</section>
+<section class="reservation-section">
+    <div class="reservation-container">
+        <!--Left Column: Visual/ "Your Table Awaits You" Area-->
+        <div class="reservation-visual">
+            <div class="table-scene">
+                <div class="table-surface"></div>
+        </div>
+        </div>
+        <!--Right Column: Reservation Form-->
+        <div class="reservation-form-wrapper">
+        <h2>Your Table Awaits You</h2>
+        <p>Fill out the details below to secure your dining experience.</p>
+
+        <form class="reservation-form" action="https://formspree.io/f/xwlvobva" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" maxlength="200" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" maxlength="254" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your number" required>
+            </div>
+            <div class="form-row">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <select id="guests" name="guests" required>
+                <option value="" disabled selected>Select guests</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People (Standard Table)</option>
+                    <option value="4">4 People (Family Table)</option>
+                    <option value="6">6+ People (VIP Table)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="special-requests">Special Requests (Optional)</label>
+                <textarea id="special-requests" name="special_requests" rows="3" placeholder="Allergies, seating preferences, etc."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Reserve Your Table Now</button>
+            <p class="reservation-form-status" role="status" aria-live="polite"></p>
+        </form>
+        </div>
+    </div>
+</section>
+
+<!-- Direct Contact & Info Section -->
+ <section class="contact-info-section">
+    <div class="contact-info-container">
+
+        <!-- Contact Cards Grid -->
+         <div class="info-cards-grid">
+            <div class="info-card">
+                <h3>Location</h3>
+                <p>45 Berkley Square, Mayfair</p>
+                <p>London W1J 5AS, United Kingdom</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Opening Hours</h3>
+                <p><strong>Lunch:</strong> 12:00 PM - 3:30 PM</p>
+                <p><strong>Dinner:</strong> 6:00 PM - 11:30 PM</p>
+                <p><em>Monday - Sunday: 11:00 AM - 11:00 PM</em></p>
+            </div>
+
+            <div class="info-card">
+                <h3>Direct Touchpoints</h3>
+                <p><strong>Reservations:</strong> (+456) 789-0123</p>
+                <p><strong>Private Dining:</strong> contact@savorarestaurant.com</p>
+            </div>
+        </div>
+
+        <!-- Google Maps Embed Container -->
+         <div class="map-wrapper">
+            <iframe
+            class="google-map"
+            title="Savora Kitchen location map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.1234567890123!2d-0.1421234567890123!3d51.50912345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b1234567890%3A0xabcdef1234567890!2sSavora%20Kitchen%20Restaurant!5e0!3m2!1sen!2suk!4v1234567890123"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+         </div>
+    </div>
+ </section>
+<footer>
+    <section class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <p>Follow Us:</p>
+                <ul>
+                   <li><a href="#" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.67.33-1 1-1Z" fill="currentColor"/></svg></a></li>
+                   <li><a href="#" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></li>
+                    <li><a href="#" aria-label="Twitter"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6.2c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.7.4-1.5.7-2.4.9A3.7 3.7 0 0 0 11.7 8c0 .3 0 .6.1.9a10.5 10.5 0 0 1-7.6-3.8 3.7 3.7 0 0 0 1.1 4.9c-.6 0-1.2-.2-1.7-.5 0 1.8 1.3 3.3 3 3.7-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.5 1.9 2.6 3.6 2.6A7.5 7.5 0 0 1 3.8 17c-.3 0-.7 0-1-.1a10.5 10.5 0 0 0 5.7 1.7c6.8 0 10.5-5.6 10.5-10.5v-.5c.7-.5 1.4-1.1 2-1.8Z" fill="currentColor"/></svg></a></li>
+                </ul>
+            </div>
+            <p>
+                &copy; 2026 Savora Kitchen. All rights reserved.
+            </p>
+        </div>
+    </section>
+</footer>
+<script src="script.js"></script>
+<script type="module" src="reservation.js"></script>
+</body>
+</html>
+
+

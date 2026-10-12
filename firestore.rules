@@ -1,0 +1,162 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(userId) {
+      return request.auth != null
+        && request.auth.uid == userId;
+    }
+
+    function hasExactFields(data, fields) {
+      return data.keys().hasAll(fields)
+        && data.keys().hasOnly(fields);
+    }
+
+    function isValidOrderItem(item) {
+      return item is map
+        && hasExactFields(item, [
+          'dish',
+          'quantity',
+          'unitPrice',
+          'subtotal'
+        ])
+        && item.dish is string
+        && item.dish.size() > 0
+        && item.dish.size() <= 100
+        && item.quantity is int
+        && item.quantity >= 1
+        && item.quantity <= 10
+        && (item.unitPrice is int || item.unitPrice is float)
+        && item.unitPrice > 0
+        && item.unitPrice <= 1000
+        && (item.subtotal is int || item.subtotal is float)
+        && item.subtotal > 0
+        && item.subtotal <= 10000
+        && item.subtotal == item.unitPrice * item.quantity;
+    }
+
+    function isValidOrder(data) {
+      return hasExactFields(data, [
+          'customerName',
+          'customerEmail',
+          'orderType',
+          'items',
+          'total',
+          'deliveryAddress',
+          'pickupTime',
+          'userId',
+          'createdAt'
+        ])
+        && data.customerName is string
+        && data.customerName.size() > 0
+        && data.customerName.size() <= 200
+        && data.customerEmail is string
+        && data.customerEmail.size() > 0
+        && data.customerEmail.size() <= 254
+        && data.orderType in ['Delivery', 'Pickup']
+        && data.items is list
+        && data.items.size() == 1
+        && isValidOrderItem(data.items[0])
+        && (data.total is int || data.total is float)
+        && data.total > 0
+        && data.total <= 10000
+        && data.total == data.items[0].subtotal
+        && data.deliveryAddress is string
+        && data.deliveryAddress.size() <= 500
+        && data.pickupTime is string
+        && data.userId is string
+        && data.createdAt is timestamp
+        && (
+          (
+            data.orderType == 'Delivery'
+            && data.deliveryAddress.size() > 0
+            && data.pickupTime == ''
+          )
+          ||
+          (
+            data.orderType == 'Pickup'
+            && data.deliveryAddress == ''
+            && (
+              data.pickupTime == ''
+              || data.pickupTime.matches('^([01][0-9]|2[0-3]):[0-5][0-9]$')
+            )
+          )
+        );
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+
+      allow create: if isOwner(userId)
+        && hasExactFields(request.resource.data, [
+          'displayName',
+          'email',
+          'avatarId',
+          'membership',
+          'clubPoints',
+          'createdAt',
+          'preferences'
+        ])
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() > 0
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.avatarId == 'savora-01'
+        && request.resource.data.membership == 'Standard'
+        && request.resource.data.clubPoints == 0
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.preferences is map;
+
+      allow update: if isOwner(userId)
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['displayName', 'avatarId', 'preferences'])
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() > 0
+        && request.resource.data.avatarId is string
+        && request.resource.data.avatarId.size() > 0
+        && request.resource.data.preferences is map;
+
+      allow delete: if false;
+    }
+
+    match /reservations/{reservationId} {
+      allow create: if request.auth != null
+        && hasExactFields(request.resource.data, [
+          'name',
+          'email',
+          'date',
+          'time',
+          'guests',
+          'userId',
+          'createdAt'
+        ])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 200
+        && request.resource.data.email is string
+        && request.resource.data.email.size() > 0
+        && request.resource.data.email.size() <= 254
+        && request.resource.data.date is string
+        && request.resource.data.date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.time is string
+        && request.resource.data.time.matches('^([01][0-9]|2[0-3]):[0-5][0-9]$')
+        && request.resource.data.guests in ['1', '2', '4', '6']
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.createdAt == request.time;
+
+      allow read: if request.auth != null
+        && resource.data.userId == request.auth.uid;
+
+      allow update, delete: if false;
+    }
+
+    match /orders/{orderId} {
+      allow create: if isOwner(request.resource.data.userId)
+        && isValidOrder(request.resource.data)
+        && request.resource.data.createdAt == request.time;
+
+      allow read: if isOwner(resource.data.userId);
+
+      allow update, delete: if false;
+    }
+  }
+}
